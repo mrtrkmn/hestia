@@ -1,5 +1,9 @@
 # Hestia
 
+[![tests](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml/badge.svg)](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 *Named after the Greek goddess of the hearth — the sacred fire at the center of every household that all other functions gathered around.*
 
 A self-hosted, fully local platform that unifies file processing, network-attached storage, secure networking, IoT integration, and a job queue behind a single web dashboard. Zero cloud dependencies — everything runs on one Linux machine.
@@ -154,41 +158,6 @@ cd iot-bridge && python -m pytest tests/ -v
 # Dashboard
 cd dashboard && npm test
 ```
-
-### Test Coverage by Property
-
-| Property | Test File | Validates |
-|---|---|---|
-| P1: PDF merge page count | file-processor/tests/test_pdf.py | Req 1.1 |
-| P2: PDF split page range | file-processor/tests/test_pdf.py | Req 1.2 |
-| P3: PDF compression | file-processor/tests/test_pdf.py | Req 1.4 |
-| P4: Invalid file errors | file-processor/tests/test_errors.py | Req 1.5, 2.4, 3.5 |
-| P5: PDF-to-image count | file-processor/tests/test_image.py | Req 2.1 |
-| P6: Images-to-PDF count | file-processor/tests/test_image.py | Req 2.2 |
-| P7: Image dimension preservation | file-processor/tests/test_image.py | Req 2.3 |
-| P8: Pipeline format validation | file-processor/tests/test_pipeline.py | Req 4.1 |
-| P9: Pipeline failure preservation | file-processor/tests/test_pipeline.py | Req 4.4 |
-| P10: Pipeline round-trip | file-processor/tests/test_pipeline.py | Req 4.5 |
-| P11: Storage access control | storage-service/tests/test_access_control.py | Req 5.5 |
-| P12: TOTP validation | shared/tests/test_totp.py | Req 9.2 |
-| P13: JWT round-trip | shared/tests/test_jwt_roundtrip.py | Req 9.3 |
-| P14: Invalid JWT → 401 | api-gateway/tests/test_gateway.py | Req 9.4 |
-| P15: Password policy | shared/tests/test_password_policy.py | Req 9.5 |
-| P16: RBAC enforcement | shared/tests/test_rbac.py | Req 9.7 |
-| P17: MQTT credentials | shared/tests/test_mqtt_credentials.py | Req 10.6 |
-| P18: MQTT topic matching | iot-bridge/tests/test_iot.py | Req 11.1 |
-| P19: Cron scheduling | iot-bridge/tests/test_iot.py | Req 11.3 |
-| P20: Workflow logging | iot-bridge/tests/test_iot.py | Req 11.4 |
-| P21: Download link expiry | dashboard/src/__tests__/downloadExpiry.test.ts | Req 12.5 |
-| P22: Job ID uniqueness | job-queue/tests/test_queue.py | Req 13.2 |
-| P23: FIFO + priority ordering | job-queue/tests/test_queue.py | Req 13.3 |
-| P24: Completed job invariant | job-queue/tests/test_queue.py | Req 13.5 |
-| P25: Secret entropy | shared/tests/test_security.py | Req 15.2 |
-| P26: Input sanitization | api-gateway/tests/test_gateway.py | Req 15.7 |
-| P27: Security event logging | shared/tests/test_security.py | Req 7.5, 15.9 |
-| P28: Validation error format | api-gateway/tests/test_gateway.py | Req 17.3 |
-| P29: API versioning | api-gateway/tests/test_gateway.py | Req 17.4 |
-| P30: Model JSON round-trip | shared/tests/test_model_roundtrip.py | Req 17.5, 17.6 |
 
 ## Services
 

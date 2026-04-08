@@ -1,0 +1,63 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  python-tests:
+    name: Python Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r shared/requirements.txt
+          pip install -r job-queue/requirements.txt
+          pip install -r file-processor/requirements.txt
+          pip install fastapi uvicorn httpx python-multipart
+          pip install fakeredis pytest pytest-asyncio hypothesis
+
+      - name: Test shared + job-queue
+        run: python -m pytest shared/ job-queue/ -v
+
+      - name: Test API Gateway
+        working-directory: api-gateway
+        run: python -m pytest tests/ -v
+
+      - name: Test File Processor
+        working-directory: file-processor
+        run: python -m pytest tests/ -v
+
+      - name: Test Storage Service
+        working-directory: storage-service
+        run: python -m pytest tests/ -v
+
+      - name: Test IoT Bridge
+        working-directory: iot-bridge
+        run: python -m pytest tests/ -v
+
+  dashboard-tests:
+    name: Dashboard Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        working-directory: dashboard
+        run: npm ci
+
+      - name: Run tests
+        working-directory: dashboard
+        run: npm test
