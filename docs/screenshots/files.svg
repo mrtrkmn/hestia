@@ -1,73 +1,94 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
-  <rect width="1200" height="700" fill="#0f1117"/>
-  <!-- Nav -->
-  <rect width="1200" height="48" fill="#161822"/>
-  <text x="20" y="30" fill="#e1e1e6" font-family="system-ui" font-weight="700" font-size="18">🔥 Hestia</text>
-  <text x="120" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Dashboard</text>
-  <text x="220" y="30" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="500">Files</text>
-  <text x="280" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Pipelines</text>
-  <text x="370" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Storage</text>
-  <text x="445" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">IoT</text>
-  <text x="490" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Admin</text>
-  <line x1="220" y1="46" x2="265" y2="46" stroke="#4f5bff" stroke-width="2"/>
-  <!-- Title -->
-  <text x="40" y="90" fill="#e1e1e6" font-family="system-ui" font-size="24" font-weight="600">File Processing</text>
+  <defs>
+    <linearGradient id="logo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#8b5cf6"/></linearGradient>
+    <linearGradient id="prog" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3b82f6"/><stop offset="100%" stop-color="#60a5fa"/></linearGradient>
+  </defs>
+  <rect width="1200" height="700" fill="#0b0e1a"/>
+  <!-- Sidebar -->
+  <rect width="240" height="700" fill="#111627"/>
+  <line x1="240" y1="0" x2="240" y2="700" stroke="#1e2540"/>
+  <rect x="20" y="18" width="32" height="32" rx="8" fill="url(#logo)"/>
+  <path d="M28 14c0 0-5 4.5-5 9.5C23 26.1 25.2 28 28 28s5-1.9 5-4.5C33 18.5 28 14 28 14z" fill="rgba(255,255,255,0.85)"/><ellipse cx="28" cy="24.5" rx="2" ry="2.8" fill="rgba(59,130,246,0.5)"/>
+  <text x="62" y="40" fill="#e8eaf0" font-family="system-ui" font-weight="700" font-size="20">Hestia</text>
+  <line x1="0" y1="64" x2="240" y2="64" stroke="#1e2540"/>
+  <text x="24" y="100" fill="#7b83a6" font-size="16">📊</text>
+  <text x="50" y="100" fill="#7b83a6" font-family="system-ui" font-size="14">Dashboard</text>
+  <rect x="10" y="112" width="220" height="38" rx="8" fill="rgba(59,130,246,0.12)"/>
+  <text x="24" y="136" fill="#3b82f6" font-size="16">📁</text>
+  <text x="50" y="136" fill="#3b82f6" font-family="system-ui" font-size="14" font-weight="600">Files</text>
+  <text x="24" y="172" fill="#7b83a6" font-size="16">⚡</text>
+  <text x="50" y="172" fill="#7b83a6" font-family="system-ui" font-size="14">Pipelines</text>
+  <text x="24" y="206" fill="#7b83a6" font-size="16">💾</text>
+  <text x="50" y="206" fill="#7b83a6" font-family="system-ui" font-size="14">Storage</text>
+  <text x="24" y="240" fill="#7b83a6" font-size="16">🔌</text>
+  <text x="50" y="240" fill="#7b83a6" font-family="system-ui" font-size="14">IoT</text>
+  <text x="24" y="274" fill="#7b83a6" font-size="16">⚙️</text>
+  <text x="50" y="274" fill="#7b83a6" font-family="system-ui" font-size="14">Admin</text>
+  <!-- Topbar -->
+  <rect x="240" y="0" width="960" height="56" fill="rgba(11,14,26,0.9)"/>
+  <line x1="240" y1="56" x2="1200" y2="56" stroke="#1e2540"/>
+  <text x="272" y="34" fill="#e8eaf0" font-family="system-ui" font-size="16" font-weight="600">Files</text>
+  <text x="1140" y="34" fill="#4a5178" font-family="system-ui" font-size="12">v1.0.0</text>
   <!-- Dropzone -->
-  <rect x="40" y="110" width="1120" height="90" rx="8" fill="none" stroke="#2a2d3a" stroke-width="2" stroke-dasharray="8,4"/>
-  <text x="600" y="155" fill="#a0a3b1" font-family="system-ui" font-size="14" text-anchor="middle">Drag &amp; drop files here, or click to select</text>
-  <text x="600" y="178" fill="#555" font-family="system-ui" font-size="12" text-anchor="middle">Supports PDF, PNG, JPEG, MP4, MKV, AVI, MP3, FLAC, WAV up to 10 GB</text>
-  <!-- Operation selector card -->
-  <rect x="40" y="220" width="1120" height="70" rx="8" fill="#161822" stroke="#2a2d3a"/>
-  <text x="60" y="248" fill="#a0a3b1" font-family="system-ui" font-size="12">Operation</text>
-  <rect x="60" y="254" width="200" height="28" rx="4" fill="#1e2030" stroke="#2a2d3a"/>
-  <text x="72" y="273" fill="#e1e1e6" font-family="system-ui" font-size="13">OCR (make searchable)</text>
-  <text x="300" y="248" fill="#a0a3b1" font-family="system-ui" font-size="12">Target format</text>
-  <rect x="300" y="254" width="150" height="28" rx="4" fill="#1e2030" stroke="#2a2d3a"/>
-  <text x="312" y="273" fill="#e1e1e6" font-family="system-ui" font-size="13">PDF</text>
-  <rect x="490" y="254" width="90" height="28" rx="6" fill="#4f5bff"/>
-  <text x="517" y="273" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Process</text>
-  <!-- Jobs table -->
-  <text x="40" y="330" fill="#a0a3b1" font-family="system-ui" font-size="16">Jobs</text>
-  <!-- Header -->
-  <text x="60" y="360" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">ID</text>
-  <text x="200" y="360" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">TYPE</text>
-  <text x="400" y="360" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">STATUS</text>
-  <text x="560" y="360" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">PROGRESS</text>
-  <text x="750" y="360" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">ACTIONS</text>
-  <line x1="40" y1="370" x2="1160" y2="370" stroke="#2a2d3a"/>
-  <!-- Row 1 -->
-  <text x="60" y="395" fill="#e1e1e6" font-family="monospace" font-size="12">a3f8c2d1</text>
-  <text x="200" y="395" fill="#e1e1e6" font-family="system-ui" font-size="13">pdf_ocr</text>
-  <rect x="400" y="382" width="80" height="20" rx="10" fill="#1a3a2a"/>
-  <text x="416" y="396" fill="#4ade80" font-family="system-ui" font-size="11" font-weight="600">completed</text>
-  <rect x="560" y="388" width="120" height="6" rx="3" fill="#2a2d3a"/>
-  <rect x="560" y="388" width="120" height="6" rx="3" fill="#4f5bff"/>
-  <rect x="750" y="380" width="80" height="26" rx="6" fill="#4f5bff"/>
-  <text x="766" y="398" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">Download</text>
-  <line x1="40" y1="410" x2="1160" y2="410" stroke="#2a2d3a"/>
-  <!-- Row 2 -->
-  <text x="60" y="435" fill="#e1e1e6" font-family="monospace" font-size="12">b7e4f9a2</text>
-  <text x="200" y="435" fill="#e1e1e6" font-family="system-ui" font-size="13">video_transcode</text>
-  <rect x="400" y="422" width="65" height="20" rx="10" fill="#1a2a3a"/>
-  <text x="413" y="436" fill="#60a5fa" font-family="system-ui" font-size="11" font-weight="600">running</text>
-  <rect x="560" y="428" width="120" height="6" rx="3" fill="#2a2d3a"/>
-  <rect x="560" y="428" width="78" height="6" rx="3" fill="#4f5bff"/>
-  <text x="690" y="436" fill="#a0a3b1" font-family="system-ui" font-size="11">65%</text>
-  <line x1="40" y1="450" x2="1160" y2="450" stroke="#2a2d3a"/>
-  <!-- Row 3 -->
-  <text x="60" y="475" fill="#e1e1e6" font-family="monospace" font-size="12">c1d2e3f4</text>
-  <text x="200" y="475" fill="#e1e1e6" font-family="system-ui" font-size="13">pdf_compress</text>
-  <rect x="400" y="462" width="65" height="20" rx="10" fill="#1a2a3a"/>
-  <text x="412" y="476" fill="#60a5fa" font-family="system-ui" font-size="11" font-weight="600">pending</text>
-  <rect x="560" y="468" width="120" height="6" rx="3" fill="#2a2d3a"/>
-  <rect x="750" y="460" width="65" height="26" rx="6" fill="#dc2626"/>
-  <text x="763" y="478" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">Cancel</text>
-  <line x1="40" y1="490" x2="1160" y2="490" stroke="#2a2d3a"/>
-  <!-- Row 4 -->
-  <text x="60" y="515" fill="#e1e1e6" font-family="monospace" font-size="12">d5e6f7a8</text>
-  <text x="200" y="515" fill="#e1e1e6" font-family="system-ui" font-size="13">pdf_merge</text>
-  <rect x="400" y="502" width="55" height="20" rx="10" fill="#3a1a1a"/>
-  <text x="413" y="516" fill="#f87171" font-family="system-ui" font-size="11" font-weight="600">failed</text>
-  <rect x="560" y="508" width="120" height="6" rx="3" fill="#2a2d3a"/>
-  <rect x="560" y="508" width="48" height="6" rx="3" fill="#dc2626"/>
+  <rect x="272" y="76" width="900" height="80" rx="12" fill="rgba(17,22,39,0.5)" stroke="#1e2540" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="722" y="116" fill="#4a5178" font-family="system-ui" font-size="14" text-anchor="middle">Drag &amp; drop files here, or click to select</text>
+  <text x="722" y="136" fill="#2a3356" font-family="system-ui" font-size="12" text-anchor="middle">PDF, PNG, JPEG, MP4, MKV, AVI, MP3, FLAC, WAV up to 10 GB</text>
+  <!-- Operation card -->
+  <rect x="272" y="174" width="900" height="68" rx="10" fill="#111627" stroke="#1e2540"/>
+  <text x="292" y="198" fill="#4a5178" font-family="system-ui" font-size="11" font-weight="600" letter-spacing="0.4">OPERATION</text>
+  <rect x="292" y="206" width="200" height="28" rx="8" fill="#0b0e1a" stroke="#1e2540"/>
+  <text x="306" y="225" fill="#e8eaf0" font-family="system-ui" font-size="13">OCR (make searchable)</text>
+  <text x="520" y="198" fill="#4a5178" font-family="system-ui" font-size="11" font-weight="600" letter-spacing="0.4">TARGET FORMAT</text>
+  <rect x="520" y="206" width="140" height="28" rx="8" fill="#0b0e1a" stroke="#1e2540"/>
+  <text x="534" y="225" fill="#e8eaf0" font-family="system-ui" font-size="13">PDF</text>
+  <rect x="700" y="206" width="90" height="28" rx="8" fill="#3b82f6"/>
+  <text x="727" y="225" fill="#fff" font-family="system-ui" font-size="13" font-weight="600">Process</text>
+  <!-- Section header -->
+  <text x="272" y="278" fill="#4a5178" font-family="system-ui" font-size="12" font-weight="600" letter-spacing="0.8">JOBS</text>
+  <!-- Table header -->
+  <text x="292" y="306" fill="#4a5178" font-family="system-ui" font-size="10" font-weight="600" letter-spacing="0.6">ID</text>
+  <text x="420" y="306" fill="#4a5178" font-family="system-ui" font-size="10" font-weight="600" letter-spacing="0.6">OPERATION</text>
+  <text x="620" y="306" fill="#4a5178" font-family="system-ui" font-size="10" font-weight="600" letter-spacing="0.6">STATUS</text>
+  <text x="780" y="306" fill="#4a5178" font-family="system-ui" font-size="10" font-weight="600" letter-spacing="0.6">PROGRESS</text>
+  <text x="1020" y="306" fill="#4a5178" font-family="system-ui" font-size="10" font-weight="600" letter-spacing="0.6">ACTIONS</text>
+  <line x1="272" y1="316" x2="1172" y2="316" stroke="#1e2540"/>
+  <!-- Row 1: completed -->
+  <text x="292" y="344" fill="#c0c4d8" font-family="monospace" font-size="12">a3f8c2d1</text>
+  <text x="420" y="344" fill="#c0c4d8" font-family="system-ui" font-size="13">pdf_ocr</text>
+  <rect x="620" y="330" width="76" height="20" rx="10" fill="rgba(34,197,94,0.12)"/>
+  <circle cx="632" cy="340" r="3" fill="#22c55e"/>
+  <text x="639" y="344" fill="#4ade80" font-family="system-ui" font-size="10" font-weight="600">completed</text>
+  <rect x="780" y="336" width="140" height="6" rx="3" fill="#1e2540"/>
+  <rect x="780" y="336" width="140" height="6" rx="3" fill="url(#prog)"/>
+  <rect x="1020" y="328" width="86" height="26" rx="8" fill="#3b82f6"/>
+  <text x="1040" y="346" fill="#fff" font-family="system-ui" font-size="12" font-weight="600">Download</text>
+  <line x1="272" y1="360" x2="1172" y2="360" stroke="rgba(30,37,64,0.6)"/>
+  <!-- Row 2: running -->
+  <text x="292" y="388" fill="#c0c4d8" font-family="monospace" font-size="12">b7e4f9a2</text>
+  <text x="420" y="388" fill="#c0c4d8" font-family="system-ui" font-size="13">video_transcode</text>
+  <rect x="620" y="374" width="62" height="20" rx="10" fill="rgba(59,130,246,0.12)"/>
+  <circle cx="632" cy="384" r="3" fill="#3b82f6"><animate attributeName="opacity" values="1;0.4;1" dur="1.5s" repeatCount="indefinite"/></circle>
+  <text x="639" y="388" fill="#60a5fa" font-family="system-ui" font-size="10" font-weight="600">running</text>
+  <rect x="780" y="380" width="140" height="6" rx="3" fill="#1e2540"/>
+  <rect x="780" y="380" width="91" height="6" rx="3" fill="url(#prog)"/>
+  <text x="930" y="388" fill="#7b83a6" font-family="system-ui" font-size="11">65%</text>
+  <line x1="272" y1="404" x2="1172" y2="404" stroke="rgba(30,37,64,0.6)"/>
+  <!-- Row 3: pending -->
+  <text x="292" y="432" fill="#c0c4d8" font-family="monospace" font-size="12">c1d2e3f4</text>
+  <text x="420" y="432" fill="#c0c4d8" font-family="system-ui" font-size="13">pdf_compress</text>
+  <rect x="620" y="418" width="62" height="20" rx="10" fill="rgba(59,130,246,0.12)"/>
+  <circle cx="632" cy="428" r="3" fill="#3b82f6"/>
+  <text x="639" y="432" fill="#60a5fa" font-family="system-ui" font-size="10" font-weight="600">pending</text>
+  <rect x="780" y="424" width="140" height="6" rx="3" fill="#1e2540"/>
+  <rect x="1020" y="418" width="66" height="26" rx="8" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.2)"/>
+  <text x="1035" y="436" fill="#f87171" font-family="system-ui" font-size="12" font-weight="600">Cancel</text>
+  <line x1="272" y1="448" x2="1172" y2="448" stroke="rgba(30,37,64,0.6)"/>
+  <!-- Row 4: failed -->
+  <text x="292" y="476" fill="#c0c4d8" font-family="monospace" font-size="12">d5e6f7a8</text>
+  <text x="420" y="476" fill="#c0c4d8" font-family="system-ui" font-size="13">pdf_merge</text>
+  <rect x="620" y="462" width="52" height="20" rx="10" fill="rgba(239,68,68,0.12)"/>
+  <circle cx="632" cy="472" r="3" fill="#ef4444"/>
+  <text x="639" y="476" fill="#f87171" font-family="system-ui" font-size="10" font-weight="600">failed</text>
+  <rect x="780" y="468" width="140" height="6" rx="3" fill="#1e2540"/>
+  <rect x="780" y="468" width="56" height="6" rx="3" fill="#ef4444"/>
 </svg>

@@ -10,12 +10,12 @@ import IoTPage from "./pages/IoTPage";
 import AdminPage from "./pages/AdminPage";
 
 const NAV_ITEMS = [
-  { to: "/", icon: "📊", key: "nav.dashboard" },
-  { to: "/files", icon: "📁", key: "nav.files" },
-  { to: "/pipelines", icon: "⚡", key: "nav.pipelines" },
-  { to: "/storage", icon: "💾", key: "nav.storage" },
-  { to: "/iot", icon: "🔌", key: "nav.iot" },
-  { to: "/admin", icon: "⚙️", key: "nav.admin" },
+  { to: "/", icon: "◫", key: "nav.dashboard" },
+  { to: "/files", icon: "◧", key: "nav.files" },
+  { to: "/pipelines", icon: "◨", key: "nav.pipelines" },
+  { to: "/storage", icon: "◩", key: "nav.storage" },
+  { to: "/iot", icon: "◪", key: "nav.iot" },
+  { to: "/admin", icon: "◬", key: "nav.admin" },
 ];
 
 function PageTitle() {
@@ -35,7 +35,7 @@ function App() {
         <aside className={`sidebar ${sidebarOpen ? "open" : ""}`}>
           <div className="sidebar-header">
             <div className="logo">
-              <div className="logo-icon">🔥</div>
+              <img src="/logo.svg" alt="Hestia" width="32" height="32" style={{ borderRadius: 8 }} />
               Hestia
             </div>
           </div>
