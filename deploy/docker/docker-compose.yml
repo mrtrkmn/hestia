@@ -1,0 +1,160 @@
+services:
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    networks:
+      - hub_internal
+    read_only: true
+    user: "999:999"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  authelia:
+    image: authelia/authelia:4
+    restart: unless-stopped
+    volumes:
+      - ./../../config/authelia:/config:ro
+      - authelia_data:/config/db
+    networks:
+      - hub_internal
+    env_file: .env
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  api-gateway:
+    image: hestia/api-gateway:latest
+    build: ../../api-gateway
+    restart: unless-stopped
+    user: "1000:1000"
+    read_only: true
+    networks:
+      - hub_internal
+    env_file: .env
+    depends_on:
+      - redis
+      - authelia
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/healthz"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  file-processor:
+    image: hestia/file-processor:latest
+    build: ../../file-processor
+    restart: unless-stopped
+    user: "1000:1000"
+    volumes:
+      - uploads:/tmp/hub-uploads
+      - outputs:/tmp/hub-outputs
+    networks:
+      - hub_internal
+    env_file: .env
+    depends_on:
+      - redis
+
+  job-queue:
+    image: hestia/job-queue:latest
+    build: ../../job-queue
+    restart: unless-stopped
+    user: "1000:1000"
+    read_only: true
+    networks:
+      - hub_internal
+    env_file: .env
+    depends_on:
+      redis:
+        condition: service_healthy
+
+  worker:
+    image: hestia/job-queue:latest
+    build: ../../job-queue
+    command: python -m app.worker
+    restart: unless-stopped
+    user: "1000:1000"
+    volumes:
+      - uploads:/tmp/hub-uploads
+      - outputs:/tmp/hub-outputs
+    networks:
+      - hub_internal
+    env_file: .env
+    depends_on:
+      redis:
+        condition: service_healthy
+    deploy:
+      replicas: 1
+
+  storage-service:
+    image: hestia/storage-service:latest
+    build: ../../storage-service
+    restart: unless-stopped
+    user: "1000:1000"
+    volumes:
+      - storage_data:/srv/storage
+    networks:
+      - hub_internal
+    env_file: .env
+
+  iot-bridge:
+    image: hestia/iot-bridge:latest
+    build: ../../iot-bridge
+    restart: unless-stopped
+    user: "1000:1000"
+    networks:
+      - hub_internal
+    env_file: .env
+
+  mosquitto:
+    image: eclipse-mosquitto:2
+    restart: unless-stopped
+    volumes:
+      - ./../../config/mosquitto:/mosquitto/config:ro
+      - mosquitto_data:/mosquitto/data
+    networks:
+      - hub_internal
+    user: "1883:1883"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./../../config/caddy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - hub_internal
+    depends_on:
+      - api-gateway
+
+  dashboard:
+    image: hestia/dashboard:latest
+    build: ../../dashboard
+    restart: unless-stopped
+    read_only: true
+    user: "1000:1000"
+    networks:
+      - hub_internal
+
+volumes:
+  redis_data:
+  authelia_data:
+  uploads:
+  outputs:
+  storage_data:
+  mosquitto_data:
+  caddy_data:
+  caddy_config:
+
+networks:
+  hub_internal:
+    driver: bridge
+    internal: true

@@ -1,0 +1,17 @@
+[Unit]
+Description=Home Utility Hub Job Queue
+After=network.target redis.service
+
+[Service]
+Type=simple
+User=hub-jobqueue
+Group=hub
+WorkingDirectory=/opt/home-utility-hub/job-queue
+EnvironmentFile=/etc/home-utility-hub/job-queue.env
+ExecStart=/opt/home-utility-hub/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8004
+Restart=on-failure
+RestartSec=5
+WatchdogSec=30
+
+[Install]
+WantedBy=multi-user.target

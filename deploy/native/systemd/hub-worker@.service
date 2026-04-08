@@ -1,0 +1,18 @@
+[Unit]
+Description=Home Utility Hub Worker %i
+After=network.target redis.service
+Wants=redis.service
+
+[Service]
+Type=simple
+User=hub-worker
+Group=hub
+WorkingDirectory=/opt/home-utility-hub/job-queue
+EnvironmentFile=/etc/home-utility-hub/worker.env
+ExecStart=/opt/home-utility-hub/venv/bin/python -m app.worker
+Restart=on-failure
+RestartSec=5
+WatchdogSec=30
+
+[Install]
+WantedBy=multi-user.target

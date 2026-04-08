@@ -1,0 +1,18 @@
+[Unit]
+Description=Home Utility Hub API Gateway
+After=network.target redis.service hub-auth.service
+Wants=redis.service
+
+[Service]
+Type=simple
+User=hub-api
+Group=hub
+WorkingDirectory=/opt/home-utility-hub/api-gateway
+EnvironmentFile=/etc/home-utility-hub/api-gateway.env
+ExecStart=/opt/home-utility-hub/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=on-failure
+RestartSec=5
+WatchdogSec=30
+
+[Install]
+WantedBy=multi-user.target

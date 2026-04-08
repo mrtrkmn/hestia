@@ -1,0 +1,17 @@
+[Unit]
+Description=Home Utility Hub File Processor
+After=network.target redis.service
+
+[Service]
+Type=simple
+User=hub-fileproc
+Group=hub
+WorkingDirectory=/opt/home-utility-hub/file-processor
+EnvironmentFile=/etc/home-utility-hub/file-processor.env
+ExecStart=/opt/home-utility-hub/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8001
+Restart=on-failure
+RestartSec=5
+WatchdogSec=30
+
+[Install]
+WantedBy=multi-user.target
