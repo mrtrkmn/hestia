@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 import DashboardPage from "./pages/DashboardPage";
 import FilesPage from "./pages/FilesPage";
 import PipelinesPage from "./pages/PipelinesPage";
@@ -7,16 +9,19 @@ import IoTPage from "./pages/IoTPage";
 import AdminPage from "./pages/AdminPage";
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <BrowserRouter>
       <nav className="app-nav">
         <span className="logo">🔥 Hestia</span>
-        <NavLink to="/">Dashboard</NavLink>
-        <NavLink to="/files">Files</NavLink>
-        <NavLink to="/pipelines">Pipelines</NavLink>
-        <NavLink to="/storage">Storage</NavLink>
-        <NavLink to="/iot">IoT</NavLink>
-        <NavLink to="/admin">Admin</NavLink>
+        <NavLink to="/">{t("nav.dashboard")}</NavLink>
+        <NavLink to="/files">{t("nav.files")}</NavLink>
+        <NavLink to="/pipelines">{t("nav.pipelines")}</NavLink>
+        <NavLink to="/storage">{t("nav.storage")}</NavLink>
+        <NavLink to="/iot">{t("nav.iot")}</NavLink>
+        <NavLink to="/admin">{t("nav.admin")}</NavLink>
+        <LanguageSwitcher />
       </nav>
       <Routes>
         <Route path="/" element={<DashboardPage />} />

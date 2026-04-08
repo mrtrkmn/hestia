@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "dashboard": "Übersicht",
+    "files": "Dateien",
+    "pipelines": "Pipelines",
+    "storage": "Speicher",
+    "iot": "IoT",
+    "admin": "Verwaltung"
+  },
+  "dashboard": {
+    "title": "Übersicht",
+    "serviceHealth": "Dienststatus",
+    "noServices": "Keine Dienste melden sich. Stellen Sie sicher, dass das Backend läuft.",
+    "uptime": "Betriebszeit"
+  },
+  "files": {
+    "title": "Dateiverarbeitung",
+    "dropzone": "Dateien hierher ziehen oder klicken zum Auswählen",
+    "filesUploaded": "{{count}} Datei(en) hochgeladen — Vorgang unten auswählen",
+    "operation": "Vorgang",
+    "targetFormat": "Zielformat",
+    "process": "Verarbeiten",
+    "jobs": "Aufträge",
+    "noJobs": "Noch keine Aufträge. Laden Sie Dateien hoch, um zu beginnen.",
+    "download": "Herunterladen",
+    "cancel": "Abbrechen"
+  },
+  "pipelines": {
+    "title": "Pipelines",
+    "create": "Pipeline erstellen",
+    "name": "Pipeline-Name",
+    "step": "Schritt {{n}}",
+    "addStep": "+ Schritt hinzufügen",
+    "save": "Pipeline speichern",
+    "saved": "Gespeicherte Pipelines",
+    "noPipelines": "Noch keine Pipelines gespeichert.",
+    "delete": "Löschen"
+  },
+  "storage": {
+    "title": "Speicher",
+    "createShare": "Freigabe erstellen",
+    "shareName": "Freigabename",
+    "path": "Pfad",
+    "allowedUsers": "Erlaubte Benutzer (kommagetrennt)",
+    "readOnly": "Nur lesen",
+    "create": "Freigabe erstellen",
+    "shares": "Freigaben",
+    "noShares": "Keine Freigaben konfiguriert.",
+    "protocols": "Protokolle",
+    "users": "Benutzer",
+    "mode": "Modus",
+    "readWrite": "Lesen-Schreiben",
+    "readOnlyLabel": "Nur lesen",
+    "all": "alle",
+    "delete": "Löschen"
+  },
+  "iot": {
+    "title": "IoT & Automatisierungen",
+    "create": "Automatisierung erstellen",
+    "name": "Name",
+    "trigger": "Auslöser",
+    "mqttTopic": "MQTT-Themenmuster",
+    "cronExpression": "Cron-Ausdruck",
+    "createBtn": "Automatisierung erstellen",
+    "automations": "Automatisierungen",
+    "noAutomations": "Keine Automatisierungen konfiguriert.",
+    "enabled": "Aktiviert",
+    "delete": "Löschen"
+  },
+  "admin": {
+    "title": "Verwaltung",
+    "users": "Benutzer",
+    "logs": "Systemprotokolle",
+    "createUser": "Benutzer erstellen",
+    "username": "Benutzername",
+    "email": "E-Mail",
+    "role": "Rolle",
+    "createBtn": "Benutzer erstellen",
+    "noUsers": "Keine Benutzer gefunden.",
+    "twoFactor": "2FA",
+    "delete": "Löschen",
+    "securityEvents": "Sicherheitsereignisse",
+    "noLogs": "Keine Protokolleinträge.",
+    "time": "Zeit",
+    "event": "Ereignis",
+    "user": "Benutzer",
+    "sourceIp": "Quell-IP",
+    "resource": "Ressource",
+    "details": "Details"
+  }
+}

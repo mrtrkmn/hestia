@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "files": "Files",
+    "pipelines": "Pipelines",
+    "storage": "Storage",
+    "iot": "IoT",
+    "admin": "Admin"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "serviceHealth": "Service Health",
+    "noServices": "No services reporting. Ensure backend is running.",
+    "uptime": "Uptime"
+  },
+  "files": {
+    "title": "File Processing",
+    "dropzone": "Drag & drop files here, or click to select",
+    "filesUploaded": "{{count}} file(s) uploaded — select operation below",
+    "operation": "Operation",
+    "targetFormat": "Target format",
+    "process": "Process",
+    "jobs": "Jobs",
+    "noJobs": "No jobs yet. Upload files to get started.",
+    "download": "Download",
+    "cancel": "Cancel"
+  },
+  "pipelines": {
+    "title": "Pipelines",
+    "create": "Create Pipeline",
+    "name": "Pipeline name",
+    "step": "Step {{n}}",
+    "addStep": "+ Add step",
+    "save": "Save pipeline",
+    "saved": "Saved Pipelines",
+    "noPipelines": "No pipelines saved yet.",
+    "delete": "Delete"
+  },
+  "storage": {
+    "title": "Storage",
+    "createShare": "Create Share",
+    "shareName": "Share name",
+    "path": "Path",
+    "allowedUsers": "Allowed users (comma-separated)",
+    "readOnly": "Read only",
+    "create": "Create share",
+    "shares": "Shares",
+    "noShares": "No shares configured.",
+    "protocols": "Protocols",
+    "users": "Users",
+    "mode": "Mode",
+    "readWrite": "read-write",
+    "readOnlyLabel": "read-only",
+    "all": "all",
+    "delete": "Delete"
+  },
+  "iot": {
+    "title": "IoT & Automations",
+    "create": "Create Automation",
+    "name": "Name",
+    "trigger": "Trigger",
+    "mqttTopic": "MQTT topic pattern",
+    "cronExpression": "Cron expression",
+    "createBtn": "Create automation",
+    "automations": "Automations",
+    "noAutomations": "No automations configured.",
+    "enabled": "Enabled",
+    "delete": "Delete"
+  },
+  "admin": {
+    "title": "Admin",
+    "users": "Users",
+    "logs": "System Logs",
+    "createUser": "Create User",
+    "username": "Username",
+    "email": "Email",
+    "role": "Role",
+    "createBtn": "Create user",
+    "noUsers": "No users found.",
+    "twoFactor": "2FA",
+    "delete": "Delete",
+    "securityEvents": "Security Events",
+    "noLogs": "No log entries.",
+    "time": "Time",
+    "event": "Event",
+    "user": "User",
+    "sourceIp": "Source IP",
+    "resource": "Resource",
+    "details": "Details"
+  }
+}

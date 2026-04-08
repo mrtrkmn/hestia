@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "dashboard": "Gösterge Paneli",
+    "files": "Dosyalar",
+    "pipelines": "İş Hatları",
+    "storage": "Depolama",
+    "iot": "IoT",
+    "admin": "Yönetim"
+  },
+  "dashboard": {
+    "title": "Gösterge Paneli",
+    "serviceHealth": "Servis Durumu",
+    "noServices": "Raporlayan servis yok. Arka ucun çalıştığından emin olun.",
+    "uptime": "Çalışma süresi"
+  },
+  "files": {
+    "title": "Dosya İşleme",
+    "dropzone": "Dosyaları sürükleyip bırakın veya seçmek için tıklayın",
+    "filesUploaded": "{{count}} dosya yüklendi — aşağıdan işlem seçin",
+    "operation": "İşlem",
+    "targetFormat": "Hedef format",
+    "process": "İşle",
+    "jobs": "İşler",
+    "noJobs": "Henüz iş yok. Başlamak için dosya yükleyin.",
+    "download": "İndir",
+    "cancel": "İptal"
+  },
+  "pipelines": {
+    "title": "İş Hatları",
+    "create": "İş Hattı Oluştur",
+    "name": "İş hattı adı",
+    "step": "Adım {{n}}",
+    "addStep": "+ Adım ekle",
+    "save": "İş hattını kaydet",
+    "saved": "Kayıtlı İş Hatları",
+    "noPipelines": "Henüz kayıtlı iş hattı yok.",
+    "delete": "Sil"
+  },
+  "storage": {
+    "title": "Depolama",
+    "createShare": "Paylaşım Oluştur",
+    "shareName": "Paylaşım adı",
+    "path": "Yol",
+    "allowedUsers": "İzin verilen kullanıcılar (virgülle ayırın)",
+    "readOnly": "Salt okunur",
+    "create": "Paylaşım oluştur",
+    "shares": "Paylaşımlar",
+    "noShares": "Yapılandırılmış paylaşım yok.",
+    "protocols": "Protokoller",
+    "users": "Kullanıcılar",
+    "mode": "Mod",
+    "readWrite": "okuma-yazma",
+    "readOnlyLabel": "salt okunur",
+    "all": "tümü",
+    "delete": "Sil"
+  },
+  "iot": {
+    "title": "IoT ve Otomasyonlar",
+    "create": "Otomasyon Oluştur",
+    "name": "Ad",
+    "trigger": "Tetikleyici",
+    "mqttTopic": "MQTT konu kalıbı",
+    "cronExpression": "Cron ifadesi",
+    "createBtn": "Otomasyon oluştur",
+    "automations": "Otomasyonlar",
+    "noAutomations": "Yapılandırılmış otomasyon yok.",
+    "enabled": "Etkin",
+    "delete": "Sil"
+  },
+  "admin": {
+    "title": "Yönetim",
+    "users": "Kullanıcılar",
+    "logs": "Sistem Günlükleri",
+    "createUser": "Kullanıcı Oluştur",
+    "username": "Kullanıcı adı",
+    "email": "E-posta",
+    "role": "Rol",
+    "createBtn": "Kullanıcı oluştur",
+    "noUsers": "Kullanıcı bulunamadı.",
+    "twoFactor": "2FA",
+    "delete": "Sil",
+    "securityEvents": "Güvenlik Olayları",
+    "noLogs": "Günlük kaydı yok.",
+    "time": "Zaman",
+    "event": "Olay",
+    "user": "Kullanıcı",
+    "sourceIp": "Kaynak IP",
+    "resource": "Kaynak",
+    "details": "Detaylar"
+  }
+}
