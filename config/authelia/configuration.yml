@@ -1,0 +1,153 @@
+# Authelia Configuration for Hestia
+# Docs: https://www.authelia.com/configuration/
+
+# ---------------------------------------------------------------------------
+# Server
+# ---------------------------------------------------------------------------
+server:
+  address: 'tcp://0.0.0.0:9091'
+
+# ---------------------------------------------------------------------------
+# Log
+# ---------------------------------------------------------------------------
+log:
+  level: info
+  format: json
+
+# ---------------------------------------------------------------------------
+# TOTP — Time-based One-Time Password (opt-in per user)
+# ---------------------------------------------------------------------------
+totp:
+  issuer: hestia
+  period: 30
+  digits: 6
+  algorithm: SHA1
+  skew: 1            # allow ±1 time-step window
+
+# ---------------------------------------------------------------------------
+# Authentication Backend — file-based for single-machine deployment
+# ---------------------------------------------------------------------------
+authentication_backend:
+  file:
+    path: /config/users_database.yml
+    password:
+      algorithm: argon2id
+      iterations: 3
+      memory: 65536
+      parallelism: 4
+      key_length: 32
+      salt_length: 16
+
+# ---------------------------------------------------------------------------
+# Password Policy
+# Minimum 12 characters, require upper + lower + digit + special
+# ---------------------------------------------------------------------------
+password_policy:
+  standard:
+    enabled: true
+    min_length: 12
+    max_length: 128
+    require_uppercase: true
+    require_lowercase: true
+    require_number: true
+    require_special: true
+
+# ---------------------------------------------------------------------------
+# Access Control — RBAC with admin and user roles
+# Default policy: deny (zero-trust)
+# ---------------------------------------------------------------------------
+access_control:
+  default_policy: deny
+  rules:
+    # Admin-only endpoints
+    - domain: '*.{{ env "HUB_DOMAIN" | default "localhost" }}'
+      policy: one_factor
+      resources:
+        - '^/api/v1/admin(/.*)?$'
+      subject:
+        - 'group:admin'
+
+    # Authenticated users (admin + user) — all other API endpoints
+    - domain: '*.{{ env "HUB_DOMAIN" | default "localhost" }}'
+      policy: one_factor
+      resources:
+        - '^/api/v1/(?!admin).*$'
+      subject:
+        - 'group:admin'
+        - 'group:user'
+
+    # Dashboard static assets — any authenticated user
+    - domain: '*.{{ env "HUB_DOMAIN" | default "localhost" }}'
+      policy: one_factor
+      resources:
+        - '^/$'
+        - '^/assets(/.*)?$'
+
+# ---------------------------------------------------------------------------
+# Session
+# ---------------------------------------------------------------------------
+session:
+  name: hub_session
+  secret: '{{ env "HUB_SESSION_SECRET" | default "change-me-session-secret" }}'
+  cookies:
+    - domain: '{{ env "HUB_DOMAIN" | default "localhost" }}'
+      authelia_url: 'https://auth.{{ env "HUB_DOMAIN" | default "localhost" }}'
+  expiration: 3600          # 1 hour
+  inactivity: 900           # 15 minutes
+  remember_me: 2592000      # 30 days
+
+# ---------------------------------------------------------------------------
+# Regulation — Account lockout
+# 5 failed attempts in 10 minutes → 15 minute ban
+# ---------------------------------------------------------------------------
+regulation:
+  max_retries: 5
+  find_time: 10m
+  ban_time: 15m
+
+# ---------------------------------------------------------------------------
+# Storage — file-based for single-machine deployment
+# ---------------------------------------------------------------------------
+storage:
+  local:
+    path: /config/db.sqlite3
+
+# ---------------------------------------------------------------------------
+# Notifier — file-based (no external SMTP needed for local deployment)
+# ---------------------------------------------------------------------------
+notifier:
+  filesystem:
+    filename: /config/notification.txt
+
+# ---------------------------------------------------------------------------
+# Identity Providers — OIDC
+# ---------------------------------------------------------------------------
+identity_providers:
+  oidc:
+    hmac_secret: '{{ env "HUB_OIDC_HMAC_SECRET" | default "change-me-oidc-hmac" }}'
+    jwks:
+      - key_id: 'hub-key'
+        algorithm: 'RS256'
+        use: 'sig'
+        key: |
+          {{ env "HUB_OIDC_PRIVATE_KEY" | default "" }}
+    clients:
+      - client_id: 'hestia'
+        client_name: 'Hestia'
+        client_secret: '{{ env "HUB_OIDC_CLIENT_SECRET" | default "change-me-client-secret" }}'
+        public: false
+        authorization_policy: one_factor
+        redirect_uris:
+          - 'https://{{ env "HUB_DOMAIN" | default "localhost" }}/api/v1/auth/callback'
+        scopes:
+          - openid
+          - profile
+          - email
+          - groups
+        grant_types:
+          - authorization_code
+          - refresh_token
+        response_types:
+          - code
+        token_endpoint_auth_method: client_secret_post
+        userinfo_signed_response_alg: none

@@ -1,0 +1,51 @@
+{
+	admin off
+}
+
+(tls_default) {
+	tls internal
+}
+
+(tls_acme) {
+	tls {$HUB_ACME_EMAIL:admin@localhost}
+}
+
+(common_headers) {
+	header_up X-Forwarded-For {remote_host}
+	header_up X-Real-IP {remote_host}
+	header_up X-Forwarded-Proto {scheme}
+}
+
+{$HUB_DOMAIN:localhost} {
+	import tls_default
+
+	# Dashboard SPA
+	handle / {
+		reverse_proxy localhost:{$HUB_DASHBOARD_PORT:5173} {
+			import common_headers
+		}
+	}
+
+	# API Gateway
+	handle /api/* {
+		reverse_proxy localhost:{$HUB_API_GATEWAY_PORT:8000} {
+			import common_headers
+		}
+	}
+
+	# Auth Service (Authelia)
+	handle /auth/* {
+		reverse_proxy localhost:9091 {
+			import common_headers
+		}
+	}
+
+	# OpenAPI docs
+	handle /api/docs {
+		reverse_proxy localhost:{$HUB_API_GATEWAY_PORT:8000} {
+			import common_headers
+		}
+	}
+
+	# Redirect HTTP -> HTTPS handled automatically by Caddy
+}
