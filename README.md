@@ -29,6 +29,20 @@ Remote Client ──WireGuard──▶ VPN Gateway (port 51820)
 
 All services communicate over localhost. Redis handles async job dispatch. Caddy terminates TLS with auto-generated self-signed certs.
 
+## Screenshots
+
+![Dashboard](docs/screenshots/dashboard.svg)
+*Service health monitoring with status badges and uptime tracking*
+
+![Files](docs/screenshots/files.svg)
+*File upload, operation selection, and job tracking with progress bars*
+
+![Storage](docs/screenshots/storage.svg)
+*NAS share management with per-user access control*
+
+![Admin](docs/screenshots/admin.svg)
+*User management with roles and 2FA status*
+
 ## Project Structure
 
 ```

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="550" viewBox="0 0 1200 550">
+  <rect width="1200" height="550" fill="#0f1117"/>
+  <!-- Nav -->
+  <rect width="1200" height="48" fill="#161822"/>
+  <text x="20" y="30" fill="#e1e1e6" font-family="system-ui" font-weight="700" font-size="18">🔥 Hestia</text>
+  <text x="120" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Dashboard</text>
+  <text x="220" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Files</text>
+  <text x="280" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Pipelines</text>
+  <text x="370" y="30" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="500">Storage</text>
+  <text x="445" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">IoT</text>
+  <text x="490" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Admin</text>
+  <line x1="370" y1="46" x2="425" y2="46" stroke="#4f5bff" stroke-width="2"/>
+  <!-- Title -->
+  <text x="40" y="90" fill="#e1e1e6" font-family="system-ui" font-size="24" font-weight="600">Storage</text>
+  <!-- Create share card -->
+  <rect x="40" y="110" width="1120" height="100" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="60" y="135" fill="#a0a3b1" font-family="system-ui" font-size="14">Create Share</text>
+  <text x="60" y="162" fill="#a0a3b1" font-family="system-ui" font-size="12">Share name</text>
+  <rect x="60" y="168" width="200" height="28" rx="4" fill="#1e2030" stroke="#2a2d3a"/>
+  <text x="72" y="187" fill="#555" font-family="system-ui" font-size="13">family-photos</text>
+  <text x="290" y="162" fill="#a0a3b1" font-family="system-ui" font-size="12">Path</text>
+  <rect x="290" y="168" width="250" height="28" rx="4" fill="#1e2030" stroke="#2a2d3a"/>
+  <text x="302" y="187" fill="#e1e1e6" font-family="system-ui" font-size="13">/srv/storage/</text>
+  <text x="580" y="162" fill="#a0a3b1" font-family="system-ui" font-size="12">Allowed users</text>
+  <rect x="580" y="168" width="200" height="28" rx="4" fill="#1e2030" stroke="#2a2d3a"/>
+  <text x="592" y="187" fill="#555" font-family="system-ui" font-size="13">alex, sam</text>
+  <text x="820" y="162" fill="#a0a3b1" font-family="system-ui" font-size="12">Read only</text>
+  <!-- Toggle off -->
+  <rect x="820" y="170" width="36" height="20" rx="10" fill="#2a2d3a"/>
+  <circle cx="833" cy="180" r="7" fill="#e1e1e6"/>
+  <rect x="900" y="168" width="100" height="28" rx="6" fill="#4f5bff"/>
+  <text x="916" y="187" fill="#fff" font-family="system-ui" font-size="13" font-weight="500">Create share</text>
+  <!-- Shares table -->
+  <text x="40" y="250" fill="#a0a3b1" font-family="system-ui" font-size="16">Shares</text>
+  <text x="60" y="280" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">NAME</text>
+  <text x="220" y="280" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">PATH</text>
+  <text x="480" y="280" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">PROTOCOLS</text>
+  <text x="600" y="280" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">USERS</text>
+  <text x="800" y="280" fill="#a0a3b1" font-family="system-ui" font-size="11" font-weight="600">MODE</text>
+  <line x1="40" y1="290" x2="1160" y2="290" stroke="#2a2d3a"/>
+  <!-- Row 1 -->
+  <text x="60" y="315" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">media</text>
+  <text x="220" y="315" fill="#e1e1e6" font-family="monospace" font-size="12">/srv/storage/media</text>
+  <text x="480" y="315" fill="#e1e1e6" font-family="system-ui" font-size="13">smb, nfs</text>
+  <text x="600" y="315" fill="#e1e1e6" font-family="system-ui" font-size="13">alex, sam, pat, chris</text>
+  <text x="800" y="315" fill="#e1e1e6" font-family="system-ui" font-size="13">read-write</text>
+  <rect x="950" y="302" width="60" height="24" rx="6" fill="#dc2626"/>
+  <text x="963" y="319" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">Delete</text>
+  <line x1="40" y1="330" x2="1160" y2="330" stroke="#2a2d3a"/>
+  <!-- Row 2 -->
+  <text x="60" y="355" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">alex-docs</text>
+  <text x="220" y="355" fill="#e1e1e6" font-family="monospace" font-size="12">/srv/storage/alex</text>
+  <text x="480" y="355" fill="#e1e1e6" font-family="system-ui" font-size="13">smb</text>
+  <text x="600" y="355" fill="#e1e1e6" font-family="system-ui" font-size="13">alex</text>
+  <text x="800" y="355" fill="#e1e1e6" font-family="system-ui" font-size="13">read-write</text>
+  <rect x="950" y="342" width="60" height="24" rx="6" fill="#dc2626"/>
+  <text x="963" y="359" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">Delete</text>
+  <line x1="40" y1="370" x2="1160" y2="370" stroke="#2a2d3a"/>
+  <!-- Row 3 -->
+  <text x="60" y="395" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">backups</text>
+  <text x="220" y="395" fill="#e1e1e6" font-family="monospace" font-size="12">/srv/storage/backups</text>
+  <text x="480" y="395" fill="#e1e1e6" font-family="system-ui" font-size="13">smb</text>
+  <text x="600" y="395" fill="#e1e1e6" font-family="system-ui" font-size="13">admin</text>
+  <text x="800" y="395" fill="#e1e1e6" font-family="system-ui" font-size="13">read-only</text>
+  <rect x="950" y="382" width="60" height="24" rx="6" fill="#dc2626"/>
+  <text x="963" y="399" fill="#fff" font-family="system-ui" font-size="12" font-weight="500">Delete</text>
+</svg>

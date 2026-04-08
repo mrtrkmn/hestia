@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="700" viewBox="0 0 1200 700">
+  <rect width="1200" height="700" fill="#0f1117"/>
+  <!-- Nav -->
+  <rect width="1200" height="48" fill="#161822"/>
+  <text x="20" y="30" fill="#e1e1e6" font-family="system-ui" font-weight="700" font-size="18">🔥 Hestia</text>
+  <text x="120" y="30" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="500">Dashboard</text>
+  <text x="220" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Files</text>
+  <text x="280" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Pipelines</text>
+  <text x="370" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Storage</text>
+  <text x="445" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">IoT</text>
+  <text x="490" y="30" fill="#a0a3b1" font-family="system-ui" font-size="14">Admin</text>
+  <line x1="120" y1="46" x2="200" y2="46" stroke="#4f5bff" stroke-width="2"/>
+  <!-- Title -->
+  <text x="40" y="90" fill="#e1e1e6" font-family="system-ui" font-size="24" font-weight="600">Dashboard</text>
+  <text x="40" y="120" fill="#a0a3b1" font-family="system-ui" font-size="16">Service Health</text>
+  <!-- Cards row 1 -->
+  <rect x="40" y="140" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="60" y="170" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">API Gateway</text>
+  <rect x="220" y="157" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="237" y="173" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="60" y="200" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 23m</text>
+
+  <rect x="330" y="140" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="350" y="170" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">File Processor</text>
+  <rect x="510" y="157" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="527" y="173" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="350" y="200" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 23m</text>
+
+  <rect x="620" y="140" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="640" y="170" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">Job Queue</text>
+  <rect x="800" y="157" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="817" y="173" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="640" y="200" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 23m</text>
+
+  <rect x="910" y="140" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="930" y="170" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">Storage Service</text>
+  <rect x="1090" y="157" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="1107" y="173" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="930" y="200" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 22m</text>
+
+  <!-- Cards row 2 -->
+  <rect x="40" y="240" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="60" y="270" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">IoT Bridge</text>
+  <rect x="220" y="257" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="237" y="273" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="60" y="300" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 20m</text>
+
+  <rect x="330" y="240" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="350" y="270" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">Authelia</text>
+  <rect x="510" y="257" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="527" y="273" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="350" y="300" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 23m</text>
+
+  <rect x="620" y="240" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="640" y="270" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">Redis</text>
+  <rect x="800" y="257" width="80" height="22" rx="11" fill="#3a3020"/>
+  <text x="812" y="273" fill="#fbbf24" font-family="system-ui" font-size="12" font-weight="600">degraded</text>
+  <text x="640" y="300" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 2h 10m</text>
+
+  <rect x="910" y="240" width="270" height="80" rx="8" fill="#161822" stroke="#2a2d3a"/>
+  <text x="930" y="270" fill="#e1e1e6" font-family="system-ui" font-size="14" font-weight="600">Mosquitto</text>
+  <rect x="1090" y="257" width="70" height="22" rx="11" fill="#1a3a2a"/>
+  <text x="1107" y="273" fill="#4ade80" font-family="system-ui" font-size="12" font-weight="600">healthy</text>
+  <text x="930" y="300" fill="#a0a3b1" font-family="system-ui" font-size="13">Uptime: 48h 23m</text>
+</svg>
