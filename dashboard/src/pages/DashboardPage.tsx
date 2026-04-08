@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import api from "../api/client";
 import type { ServiceHealth } from "../types";
+import HackerNewsFeed from "../components/HackerNewsFeed";
 
 export default function DashboardPage() {
   const { t } = useTranslation();
@@ -29,42 +30,38 @@ export default function DashboardPage() {
     <div className="page">
       {total > 0 && (
         <div className="card-grid" style={{ marginBottom: 28 }}>
-          <div className="stat-card">
-            <div className="stat-label">Total Services</div>
-            <div className="stat-value">{total}</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-label">Healthy</div>
-            <div className="stat-value" style={{ color: "#22c55e" }}>{healthy}</div>
-          </div>
-          <div className="stat-card">
-            <div className="stat-label">Issues</div>
-            <div className="stat-value" style={{ color: total - healthy > 0 ? "#ef4444" : "#22c55e" }}>{total - healthy}</div>
-          </div>
+          <div className="stat-card"><div className="stat-label">Total Services</div><div className="stat-value">{total}</div></div>
+          <div className="stat-card"><div className="stat-label">Healthy</div><div className="stat-value" style={{ color: "#22c55e" }}>{healthy}</div></div>
+          <div className="stat-card"><div className="stat-label">Issues</div><div className="stat-value" style={{ color: total - healthy > 0 ? "#ef4444" : "#22c55e" }}>{total - healthy}</div></div>
         </div>
       )}
 
-      <h2>{t("dashboard.serviceHealth")}</h2>
-      {services.length === 0 ? (
-        <div className="empty">
-          <div className="empty-icon">📡</div>
-          {t("dashboard.noServices")}
-        </div>
-      ) : (
-        <div className="card-grid">
-          {services.map((s) => (
-            <div className="stat-card" key={s.name}>
-              <div className="flex justify-between items-center">
-                <strong style={{ fontSize: 14 }}>{s.name}</strong>
-                <span className={`badge badge-${s.status}`}>{s.status}</span>
-              </div>
-              <div style={{ marginTop: 10, fontSize: 12, color: "#4a5178" }}>
-                {t("dashboard.uptime")}: <span style={{ color: "#7b83a6" }}>{uptime(s.uptime_seconds)}</span>
-              </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: 20, alignItems: "start" }}>
+        <div>
+          <h2>{t("dashboard.serviceHealth")}</h2>
+          {services.length === 0 ? (
+            <div className="empty"><div className="empty-icon">📡</div>{t("dashboard.noServices")}</div>
+          ) : (
+            <div className="card-grid">
+              {services.map((s) => (
+                <div className="stat-card" key={s.name}>
+                  <div className="flex justify-between items-center">
+                    <strong style={{ fontSize: 14 }}>{s.name}</strong>
+                    <span className={`badge badge-${s.status}`}>{s.status}</span>
+                  </div>
+                  <div style={{ marginTop: 10, fontSize: 12, color: "#4a5178" }}>
+                    {t("dashboard.uptime")}: <span style={{ color: "#7b83a6" }}>{uptime(s.uptime_seconds)}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          )}
         </div>
-      )}
+        <div>
+          <h2>Feed</h2>
+          <HackerNewsFeed />
+        </div>
+      </div>
     </div>
   );
 }
