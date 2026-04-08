@@ -1,23 +1,31 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import FilesPage from "./pages/FilesPage";
+import PipelinesPage from "./pages/PipelinesPage";
+import StoragePage from "./pages/StoragePage";
+import IoTPage from "./pages/IoTPage";
 import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
     <BrowserRouter>
-      <nav style={{ display: "flex", gap: 16, padding: 16, borderBottom: "1px solid #ccc" }}>
-        <Link to="/">Dashboard</Link>
-        <Link to="/files">Files</Link>
-        <Link to="/admin">Admin</Link>
+      <nav className="app-nav">
+        <span className="logo">🔥 Hestia</span>
+        <NavLink to="/">Dashboard</NavLink>
+        <NavLink to="/files">Files</NavLink>
+        <NavLink to="/pipelines">Pipelines</NavLink>
+        <NavLink to="/storage">Storage</NavLink>
+        <NavLink to="/iot">IoT</NavLink>
+        <NavLink to="/admin">Admin</NavLink>
       </nav>
-      <main style={{ padding: 16, maxWidth: 1200, margin: "0 auto" }}>
-        <Routes>
-          <Route path="/" element={<DashboardPage />} />
-          <Route path="/files" element={<FilesPage />} />
-          <Route path="/admin" element={<AdminPage />} />
-        </Routes>
-      </main>
+      <Routes>
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/files" element={<FilesPage />} />
+        <Route path="/pipelines" element={<PipelinesPage />} />
+        <Route path="/storage" element={<StoragePage />} />
+        <Route path="/iot" element={<IoTPage />} />
+        <Route path="/admin" element={<AdminPage />} />
+      </Routes>
     </BrowserRouter>
   );
 }

@@ -18,5 +18,51 @@ export interface ServiceHealth {
 export interface Pipeline {
   id: string;
   name: string;
-  steps: { operation: string; parameters: Record<string, unknown> }[];
+  steps: PipelineStep[];
+}
+
+export interface PipelineStep {
+  operation: string;
+  parameters: Record<string, unknown>;
+}
+
+export interface StorageShare {
+  id: string;
+  name: string;
+  path: string;
+  protocols: string[];
+  allowed_users: string[];
+  read_only: boolean;
+}
+
+export interface Automation {
+  id: string;
+  name: string;
+  trigger_type: "mqtt" | "cron";
+  mqtt_topic?: string;
+  cron_expression?: string;
+  actions: AutomationAction[];
+  enabled: boolean;
+}
+
+export interface AutomationAction {
+  type: string;
+  parameters: Record<string, unknown>;
+}
+
+export interface User {
+  id: string;
+  username: string;
+  email: string;
+  role: "admin" | "user";
+  totp_enabled: boolean;
+}
+
+export interface LogEntry {
+  event_type: string;
+  timestamp: string;
+  source_ip: string;
+  user: string;
+  resource: string;
+  details: string;
 }
