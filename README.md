@@ -1,10 +1,9 @@
 # Hestia
 
-[![tests](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml/badge.svg)](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml)
+[![Tests](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml/badge.svg)](https://github.com/mrtrkmn/hestia/actions/workflows/tests.yml)
 [![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-*Named after the Greek goddess of the hearth — the sacred fire at the center of every household that all other functions gathered around.*
 
 A self-hosted, fully local platform that unifies file processing, network-attached storage, secure networking, IoT integration, and a job queue behind a single web dashboard. Zero cloud dependencies — everything runs on one Linux machine.
 
